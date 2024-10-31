@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  background-color: #E3E0D6;
+}
+
+body {
+  @apply antialiased;
+  overscroll-behavior: none;
+}
+
+/* Larger touch targets */
+button, 
+a {
+  @apply min-h-[48px] min-w-[48px] flex items-center justify-center;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Better focus styles */
+:focus-visible {
+  @apply outline-none ring-2 ring-[#8B4513] ring-offset-2;
+}
+
+/* Active state feedback - only apply to interactive elements */
+button:active,
+a:active,
+.interactive:active {
+  @apply transform scale-[0.98] transition-transform;
+}
